@@ -1,0 +1,45 @@
+.profileContainer{
+position:relative;
+background-color: antiquewhite;
+justify-content: center;
+align-content: center;
+}
+
+.profilePic img{
+    height: 250px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.profileUserInfo{
+position: relative;
+}
+
+.outerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profileUserImages img{
+    height: 100px;
+
+}
+
+.profileAge{
+
+}
+
+.profileGender{
+
+}
+
+.profileOccupation{
+
+}
+
+.profileInterests{
+
+}

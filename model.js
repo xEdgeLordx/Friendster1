@@ -3,7 +3,7 @@ const appDiv = document.getElementById('app');
 const model = {
     app: {
         pages: ['loginPage', 'feedPage', 'profilePage', 'friendPage',],
-        currentPage: 'loginPage',
+        currentPage: 'profilePage',
 
 
         selectedUsers: {
@@ -56,13 +56,13 @@ const model = {
                 email: 'nico@outlook.no',
                 username: 'Nico',
                 password: '123',
-                userImages: [],
+                userImages: ["Photos/Screenshot 2024-11-01 13.05.41.png", "Photos/Screenshot 2024-11-01 13.06.24.png", "Photos/Screenshot 2024-11-01 13.06.55.png"],
                 name: 'Nicolai',
                 age: 31,
                 bio: 'Hei, jeg heter Nico',
-                gender: '',
+                gender: 'Male',
                 occupation: 'Student',
-                interests: ['Fotball, teknologi,'],
+                interests: ['Fotball', 'Teknologi',],
                 favoriteTeam: [],
                 friendList: [],
             },
@@ -73,11 +73,11 @@ const model = {
                 email: 'rotta@mail.no',
                 username: 'Rotta',
                 password: '123',
-                userImages: [],
+                userImages: [""],
                 name: 'Rotta',
                 age: 27,
                 bio: 'Hei, jeg heter Rotta',
-                gender: '',
+                gender: 'Male',
                 occupation: 'Rotte på heltid',
                 interests: ['Dumpster diving, spille på slurva,'],
                 favoriteTeam: [],

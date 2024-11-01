@@ -13,26 +13,7 @@ appDiv.innerHTML = loginPage;
 }
 
 
-function logIn(){
-    loginUsername = model.input.login.username;
-    loginPass = model.input.login.password;
-    let user = findUser(loginUsername, loginPass);
-    console.log("user", user)
-    if(user){
-        model.app.selectedUsers.loggedInUser = user.id;
-        console.log("selectedUser:", user.id)
-        goToProfile();
-    }
-    else{
-        model.input.tempMessages.loginMessage = /*HTML*/ `
-        Incorrect password`;
-    }
-}
 
-function findUser(loginUsername, loginPass){
-    return model.data.users.find(user =>
-    user.username === loginUsername && user.password === loginPass);
-}
 
 
 // ---------------regView--------------------------
@@ -45,14 +26,14 @@ function updateRegView(){
     <input type="text" placeholder="Confirm Password..." oninput="inputReg.passwordConfirm=this.value">
     <input type="text" placeholder="Name..." oninput="inputReg.name=this.value">
     <input type="number" placeholder="Age" oninput="inputReg.age=this.value">
-    
-    <input type="radio" value='Male' oninput="inputReg.gender=this.value">Male
+    <label>
+    <input type="radio" name="gender" value='Male' oninput="inputReg.gender=this.value">Male
     </label>
     <label>
-    <input type="radio" value='Female' oninput="inputReg.gender=this.value">Female
+    <input type="radio" name="gender" value='Female' oninput="inputReg.gender=this.value">Female
     </label>
     <input type="text" placeholder="Occupation" oninput="inputReg.occupation=this.value">
-    
+    <button onclick="registerUser()">Register user</button>
     `;
 
     appDiv.innerHTML = regView;
