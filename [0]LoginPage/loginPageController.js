@@ -59,3 +59,4 @@ function compareUser(){
 return model.data.users.find(user =>
     user.username === model.input.registerUser.username);
 }
+

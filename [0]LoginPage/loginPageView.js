@@ -7,6 +7,10 @@ loginPage = /*HTML*/ `
 <button onclick="updateRegView()">New User</button>
 <button onclick="logIn()">Log In</button>
 <div></div>
+<button onclick="goToLogin()">LoginPage</button>
+<button onclick="goToFeed()">FeedPage</button>
+<button onclick="goToProfile()">ProfilePage</button>
+<button onclick="goToFriendPage()">FriendPage</button>
 `;
 
 appDiv.innerHTML = loginPage;

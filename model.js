@@ -4,11 +4,11 @@ const model = {
     app: {
         pages: ['loginPage', 'feedPage', 'profilePage', 'friendPage',],
         currentPage: 'profilePage',
-
+        isOpen: false,
 
         selectedUsers: {
-            loggedInUser: 0,
-            friendUser: null,
+            loggedInUser: 2,
+            friendUser: 1,
         }
     },//app
     input: {
@@ -35,6 +35,10 @@ const model = {
             favoriteTeam: [],
             friendList: [],
 
+        },
+
+        profilePage: {
+            inputFriend: '',
         },
 
         tempMessages: {
@@ -69,17 +73,50 @@ const model = {
 
             {
                 id: 1,
-                isAdmin: true,
+                isAdmin: false,
                 email: 'rotta@mail.no',
                 username: 'Rotta',
                 password: '123',
-                userImages: [""],
-                name: 'Rotta',
+                userImages: ["Photos/Rotta/Screenshot 2024-11-02 09.44.24.png","Photos/Rotta/Screenshot 2024-11-02 09.46.17.png","Photos/Rotta/Screenshot 2024-11-02 09.46.01.png","Photos/Rotta/Screenshot 2024-11-02 09.45.21.png","Photos/Rotta/Screenshot 2024-11-02 09.44.56.png",],
+                name: 'Rotten',
                 age: 27,
                 bio: 'Hei, jeg heter Rotta',
                 gender: 'Male',
                 occupation: 'Rotte på heltid',
-                interests: ['Dumpster diving, spille på slurva,'],
+                interests: ['Dumpster diving', 'spille på slurva',],
+                favoriteTeam: [],
+                friendList: [],
+            },
+            {
+                id: 2,
+                isAdmin: false,
+                email: 'roerg@mail.no',
+                username: 'Roger',
+                password: '123',
+                userImages: ["Photos/Roger/Screenshot 2024-11-02 09.42.52.png","Photos/Roger/Screenshot 2024-11-02 09.43.04.png","Photos/Roger/Screenshot 2024-11-02 09.43.18.png",],
+                name: 'Roger',
+                age: 27,
+                bio: 'Hei, jeg heter Roger',
+                gender: 'Male',
+                occupation: 'Skureklut på heltid',
+                interests: ['Øl', 'spille på slurva', 'Pizza'],
+                favoriteTeam: [],
+                friendList: ['Nico',],
+            },
+
+            {
+                id: 3,
+                isAdmin: false,
+                email: 'Anna@mail.no',
+                username: 'Anna1',
+                password: '123',
+                userImages: ["Photos/Anna/Anna1.png","Photos/Anna/anna2.png","Photos/Anna/anna3.png",],
+                name: 'Anna',
+                age: 27,
+                bio: 'Hei, jeg heter Anna',
+                gender: 'Female',
+                occupation: 'Forfatter',
+                interests: ['Pocketbøker', 'Stå på hodet',],
                 favoriteTeam: [],
                 friendList: [],
             },
