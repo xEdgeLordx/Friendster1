@@ -1,4 +1,5 @@
 function updateFriendView(){
+    console.log("selectedloggedin:", model.app.selectedUsers.loggedInUser)
     let friendUser = model.data.users[model.app.selectedUsers.friendUser];
     profilePage = /*HTML*/ `
     <h1>Friend</h1>
@@ -68,11 +69,13 @@ function showInterestsFriend(friendUser){
 }
 
 function showFriendUserFriends(friendUser){
-    isOpen = true;
-    let friendsHtml = '';
+    let friendHtml = '';
     for(let friendIndex = 0; friendIndex < friendUser.friendList.length; friendIndex++){
-        friendsHtml += /*HTML*/ `
+        const friendUsername = friendUser.friendList[friendIndex];
+        const indexFriend = model.data.users.findIndex(user => user.username === friendUsername);
+        friendHtml += /*HTML*/ `
+        <div onclick="goToProfile(${indexFriend})">
         ${friendUser.friendList[friendIndex]}`
     }
-    return friendsHtml;
+    return friendHtml;
 }

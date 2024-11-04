@@ -1,4 +1,5 @@
 function updateProfileView() {
+    console.log("friend:", model.app.selectedUsers.friendUser);
     let selectedUser = model.data.users[model.app.selectedUsers.loggedInUser];
     profilePage = /*HTML*/ `
     <h1>Profile</h1>
@@ -26,9 +27,7 @@ function updateProfileView() {
             </div>
             <div class="friends">
             <h3>Venner</h3>
-            <input type="text" oninput="model.input.profilePage.inputFriend=this.value">
-            <button onclick="addFriend()">Add Friend</button>
-            ${showFriends(selectedUser)}
+          <div class="friend">${showFriends(selectedUser)}</div>
             </div>
             <div class="profileGender">
                 <strong>Gender:</strong>
@@ -82,8 +81,9 @@ function showFriends(selectedUser) {
         console.log("friendIndex:", indexFriend);
         friendsHtml += /*HTML*/ `
        <div onclick="goToFriend(${indexFriend})">
-       ${selectedUser.friendList[friendIndex]}
+      <strong> ${selectedUser.friendList[friendIndex]}</strong>
        </div>
+       <button onclick="goToChatroom(${indexFriend})">Chat</button>
        `;
     }
     
@@ -91,16 +91,18 @@ function showFriends(selectedUser) {
 }
 
 
+
 function addFriend(){
-    let selectedUser = model.data.users[model.app.selectedUsers.loggedInUser].friendList;
+    let selectedUser = model.data.users[model.app.selectedUsers.loggedInUser];
     let friendUsername = model.input.profilePage.inputFriend;
-    if(selectedUser.includes(model.input.profilePage.inputFriend)){
+    if(selectedUser.friendList.includes(model.input.profilePage.inputFriend)){
         console.log("already there");
         return;
     }
     const friendName = model.data.users.find (user => user.username === friendUsername)
-    if(model.data.users.includes(friendName) && !selectedUser.includes(friendName)){
-        selectedUser.push(friendName.username);
+    if(model.data.users.includes(friendName) && !selectedUser.friendList.includes(friendName)){
+        selectedUser.friendList.push(friendName.username);
+        friendName.friendList.push(selectedUser.username);
         friendUsername = '',
         updateProfileView();
     }

@@ -1,50 +1,114 @@
-.profileContainer{
-position:relative;
-background-color: antiquewhite;
-justify-content: center;
-align-content: center;
+.outerContainer{
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    padding: 20px;
+    height: 700px;
+    width: 1000px;
+    background-color: aqua;
 }
 
-.profilePic img{
-    
+.profileContainer {
+    position: relative;
+    background-color: antiquewhite;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.profilePic img {
+    gap: 10px;
     height: 250px;
     width: 250px;
     justify-content: center;
     align-items: center;
-    
+    border-radius: 125px;
+    border: 5px solid black;
+
 }
 
-.profileUserInfo{
-position: relative;
+.profilePic img:hover {
+    background-color: blue;
+    transform: scale(1.1);
+    border: 2px solid black;
+
 }
 
-.outerContainer{
+input:focus {
+    outline: none;
+    border: 1px solid black;
+}
+input{
+    border-radius: 10px;
+    padding: 6px;
+}
+
+input:hover {
+    transform: scale(1.01);
+    border: 2px solid black;
+}
+
+.profileUserInfo {
+    position: relative;
+    gap: 10px;
+}
+
+.outerContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.profileUserImages img{
-    height: 100px;
+.profileUserImages img {
+    height: 50px;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 2px;
 
 }
 
-.profileAge{
-
+.profileUserImages:focus {
+    outline: none;
+    border: 1px solid black;
 }
 
-.profileGender{
-
+.profileUserImages img:hover {
+    background-color: rgb(230, 230, 218);
+    transform: scale(2.3);
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
 }
 
-.profileOccupation{
-
+.profileAge {
+    font-weight: bolder;
 }
 
-.profileInterests{
+.profileGender {}
 
+.profileOccupation {}
+
+.profileInterests {}
+
+.friends {
+    cursor: pointer;
+    border: 1pxx solid black;
 }
 
-.friends{
+button:hover {
+    background-color: rgb(230, 230, 218);
+    transform: scale(1.1);
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+}
 
+button:focus {
+    outline: none;
+    border: 1px solid black;
+}
+
+.friend:focus {
+    outline: none;
+    border: 1px solid black;
 }
