@@ -1,9 +1,10 @@
 function updateLoginView(){
 loginPage = /*HTML*/ `
 <div>Login</div>
-
+<form>
 <input type="text" placeholder="Username..." oninput="model.input.login.username=this.value">
-<input type="text" placeholder="Password..." oninput="model.input.login.password=this.value">
+<input type="password" placeholder="Password..." oninput="model.input.login.password=this.value">
+</form>
 <button onclick="updateRegView()">New User</button>
 <button onclick="logIn()">Log In</button>
 <div></div>
@@ -26,8 +27,10 @@ function updateRegView(){
     regView = /*HTML*/ `
     <h1>RegView</h1>
     <input type="text" placeholder="Username..." oninput="inputReg.username=this.value">
-    <input type="text" placeholder="Password..." oninput="inputReg.password=this.value">
-    <input type="text" placeholder="Confirm Password..." oninput="inputReg.passwordConfirm=this.value">
+    <form>
+    <input type="password" placeholder="Password..." oninput="inputReg.password=this.value">
+    <input type="password" placeholder="Confirm Password..." oninput="inputReg.passwordConfirm=this.value">
+    </form>
     <input type="text" placeholder="Name..." oninput="inputReg.name=this.value">
     <input type="number" placeholder="Age" oninput="inputReg.age=this.value">
     <label>

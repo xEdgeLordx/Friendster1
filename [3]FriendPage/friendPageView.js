@@ -1,4 +1,4 @@
-function updateFriendView(){
+function updateFriendView() {
     console.log("selectedloggedin:", model.app.selectedUsers.loggedInUser)
     let friendUser = model.data.users[model.app.selectedUsers.friendUser];
     profilePage = /*HTML*/ `
@@ -49,18 +49,18 @@ function updateFriendView(){
     appDiv.innerHTML = profilePage;
 }
 
-function showFriendImages(friendUser){
+function showFriendImages(friendUser) {
     let imagesStream = '';
-    for(let imageIndex = 1; imageIndex < friendUser.userImages.length; imageIndex++){
+    for (let imageIndex = 1; imageIndex < friendUser.userImages.length; imageIndex++) {
         imagesStream += /*HTML*/ `
         <img src="${friendUser.userImages[imageIndex]}">`;
     }
     return imagesStream;
 }
 
-function showInterestsFriend(friendUser){
+function showInterestsFriend(friendUser) {
     let interestsHtml = '';
-    for(let interestIndex = 0; interestIndex < friendUser.interests.length; interestIndex++){
+    for (let interestIndex = 0; interestIndex < friendUser.interests.length; interestIndex++) {
         interestsHtml += /*HTML*/ `
         <div>${friendUser.interests[interestIndex]}</div>`;
     }
@@ -68,14 +68,15 @@ function showInterestsFriend(friendUser){
 
 }
 
-function showFriendUserFriends(friendUser){
+function showFriendUserFriends(friendUser) {
     let friendHtml = '';
-    for(let friendIndex = 0; friendIndex < friendUser.friendList.length; friendIndex++){
+    for (let friendIndex = 0; friendIndex < friendUser.friendList.length; friendIndex++) {
         const friendUsername = friendUser.friendList[friendIndex];
         const indexFriend = model.data.users.findIndex(user => user.username === friendUsername);
         friendHtml += /*HTML*/ `
         <div onclick="goToProfile(${indexFriend})">
-        ${friendUser.friendList[friendIndex]}`
+        ${friendUser.friendList[friendIndex]}
+        </div>`
     }
     return friendHtml;
 }
