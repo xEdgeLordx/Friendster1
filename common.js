@@ -60,7 +60,7 @@ function displaySearchResults() {
     for (let resultsIndex = 0; resultsIndex < searchResult.length; resultsIndex++) {
         searchHtml += /*HTML*/ `
         <div>
-        <p><strong>Username:${searchResult[resultsIndex].name} Mail:${searchResult[resultsIndex].email} <button onclick="addFriend()">Add</button></strong><p>
+        <p><strong>Username:${searchResult[resultsIndex].name} Mail:${searchResult[resultsIndex].email} <button onclick="addFriend('${searchResult[resultsIndex].username}')">Add</button></strong><p>
         
         </div>
         `;

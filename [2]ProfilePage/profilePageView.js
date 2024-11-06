@@ -92,23 +92,23 @@ function showFriends(selectedUser) {
 
 
 
-function addFriend(){
+function addFriend(username){
     let selectedUser = model.data.users[model.app.selectedUsers.loggedInUser];
-    let friendUsername = model.input.profilePage.inputFriend;
+    let friendInput = model.input.profilePage.inputFriend;
     if(selectedUser.friendList.includes(model.input.profilePage.inputFriend)){
         console.log("already there");
         return;
     }
-    const friendName = model.data.users.find (user => user.username === friendUsername)
-    if(model.data.users.includes(friendName) && !selectedUser.friendList.includes(friendName)){
-        selectedUser.friendList.push(friendName.username);
-        friendName.friendList.push(selectedUser.username);
-        friendUsername = '',
+    let friend = model.data.users.find(user => user.username === username);
+    if(friend && !selectedUser.friendList.includes(friend.username)){
+        selectedUser.friendList.push(friend.username);
+        friend.friendList.push(selectedUser.username);
+        friendInput = '',
         updateProfileView();
     }
     else {
         console.log("user not found")
-        friendUsername = '';
+        friendInput = '';
         updateProfileView();
     }
     
