@@ -7,6 +7,7 @@ function updateProfileView() {
     <div class="outerContainer">
     <div class="profileContainer">
     ${displaySearchResults()}
+    ${displayTeamResults()}
     <strong>Hello ${selectedUser.name}!</strong>
         <div class="profilePic">
         <img src="${selectedUser.userImages[0]}">
