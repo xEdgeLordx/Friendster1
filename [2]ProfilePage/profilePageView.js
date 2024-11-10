@@ -3,11 +3,15 @@ function updateProfileView() {
     let selectedUser = model.data.users[model.app.selectedUsers.loggedInUser];
     profilePage = /*HTML*/ `
     <h1>Profile</h1>
-    ${searchBar()}
-    <div class="outerContainer">
-    <div class="profileContainer">
+ <div class="searchContainer">
+        ${searchBar()}
+  <div class="searchResults">
     ${displaySearchResults()}
     ${displayTeamResults()}
+  </div>
+ </div>
+    <div class="outerContainer">
+    <div class="profileContainer">
     <strong>Hello ${selectedUser.name}!</strong>
         <div class="profilePic">
         <img src="${selectedUser.userImages[0]}">
@@ -45,10 +49,7 @@ function updateProfileView() {
         </div>
     </div>
     </div>
-    <button onclick="goToLogin()">LoginPage</button>
-<button onclick="goToFeed()">FeedPage</button>
-<button onclick="goToProfile()">ProfilePage</button>
-<button onclick="goToFriendPage()">FriendPage</button>`;
+${createNavButtons()}`;
     appDiv.innerHTML = profilePage;
 }
 

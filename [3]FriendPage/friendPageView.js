@@ -3,9 +3,10 @@ function updateFriendView() {
     let friendUser = model.data.users[model.app.selectedUsers.friendUser];
     profilePage = /*HTML*/ `
     <h1>Friend</h1>
+    ${createNavButtons()}
     <div class="outerContainer">
     <div class="profileContainer">
-    <strong>Hello ${friendUser.name}!</strong>
+    <strong>This is ${friendUser.name}'s site!</strong>
         <div class="profilePic">
         <img src="${friendUser.userImages[0]}">
         <br>
@@ -41,11 +42,7 @@ function updateFriendView() {
             </div>
         </div>
     </div>
-    </div>
-    <button onclick="goToLogin()">LoginPage</button>
-    <button onclick="goToFeed()">FeedPage</button>
-    <button onclick="goToProfile()">ProfilePage</button>
-    <button onclick="goToFriendPage()">FriendPage</button>`;
+    </div>`;
     appDiv.innerHTML = profilePage;
 }
 
@@ -73,10 +70,18 @@ function showFriendUserFriends(friendUser) {
     for (let friendIndex = 0; friendIndex < friendUser.friendList.length; friendIndex++) {
         const friendUsername = friendUser.friendList[friendIndex];
         const indexFriend = model.data.users.findIndex(user => user.username === friendUsername);
+        if(friendUsername === model.data.users[model.app.selectedUsers.loggedInUser].username){
         friendHtml += /*HTML*/ `
         <div onclick="goToProfile(${indexFriend})">
         ${friendUser.friendList[friendIndex]}
-        </div>`
+        </div>`;
+    }
+    if(friendUsername !== model.data.users[model.app.selectedUsers.loggedInUser].username){
+        friendHtml += /*HTML*/ `
+        <div onclick="goToFriend(${indexFriend})">
+        ${friendUser.friendList[friendIndex]}
+        </div>`;
+    }
     }
     return friendHtml;
 }

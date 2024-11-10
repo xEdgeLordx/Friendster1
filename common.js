@@ -37,10 +37,8 @@ function searchBar() {
     let searchBar = /*HTML*/ `
     <input type="text" oninput="model.input.search.searchInput=this.value.toLowerCase();"  placeholder="Search for user...">
     <button onclick="changeView()">Search</button>
-    <input type="text" oninput="model.input.search.searchTeamsInput=this.value.toLowerCase();"  placeholder="Search for club...">
-    <button onclick="changeView()">Search for club</button>
-    <input type="text" oninput="model.input.profilePage.inputFriend=this.value">
-    <button onclick="addFriend()">Add Friend</button>
+    <input type="text" oninput="model.input.search.searchTeamsInput=this.value.toLowerCase();"  placeholder="Search for club, manager, league...">
+    <button onclick="changeView()">Search for club info</button>
     ${selectCategory()}
     `;
     return searchBar;
@@ -75,6 +73,7 @@ function displaySearchResults() {
 
 function displayTeamResults(){
     let searchTeam = model.input.search.searchTeamsInput || '';
+    let input = model.input.search;
     let teamHtml = '';
     if(searchTeam !== ''){
     const searchTeamsResult = model.data.footballTeams.filter(club =>
@@ -85,13 +84,15 @@ function displayTeamResults(){
         club.manager.toLowerCase().includes(searchTeam)
     );
     for(let resultsIndex = 0;resultsIndex < searchTeamsResult.length; resultsIndex++){
-        let input = model.input.search;
+        let foundTeam = searchTeamsResult[resultsIndex];
         teamHtml += /*HTML*/ `
-        <p>${input.isTeam ? searchTeamsResult[resultsIndex].teamName : ''}</p>
-        <p>${input.isCity ? searchTeamsResult[resultsIndex].teamName : ''}</p>
-        <p>${input.isLeague ? searchTeamsResult[resultsIndex].teamName : ''}</p>
-        <p>${input.isNation ? searchTeamsResult[resultsIndex].teamName : ''}</p>
-        <p>${input.isManager ? searchTeamsResult[resultsIndex].manager : ''}</p>`;
+        <div class="searchReturn">
+        <p>${input.isTeam ? `<div onclick="goToClubPage(${foundTeam.clubId})">Team:${searchTeamsResult[resultsIndex].teamName}</div>` : ''}</p>
+        <p>${input.isCity ? `City:${searchTeamsResult[resultsIndex].city}` : ''}</p>
+        <p>${input.isLeague ? `League:${searchTeamsResult[resultsIndex].league}` : ''}</p>
+        <p>${input.isNation ? `Nation:${searchTeamsResult[resultsIndex].nation}` : ''}</p>
+        <p>${input.isManager ? `Manager:${searchTeamsResult[resultsIndex].manager}` : ''}</p>
+        </div>`;
     }
     console.log("team:", searchTeamsResult)
     }
@@ -124,4 +125,13 @@ function selectCategory(){
 `;
 console.log("isTeam:", model.input.search.isTeam,)
 return checkBoxHtml;
+}
+
+function createNavButtons(){
+    let navButtons = /*HTML*/ `
+    <button onclick="goToLogin()">LoginPage</button>
+<button onclick="goToFeed()">FeedPage</button>
+<button onclick="goToProfile()">ProfilePage</button>
+<button onclick="goToFriendPage()">FriendPage</button>`;
+return navButtons;
 }

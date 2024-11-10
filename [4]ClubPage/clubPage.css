@@ -1,0 +1,72 @@
+.clubContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.clubTitle {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.clubImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.clubDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+.clubDetails div {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+    color: #555;
+}
+
+.clubDetails div strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.clubHighlights {
+    grid-column: span 2;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.clubWebsite {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.clubWebsite a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.clubWebsite a:hover {
+    text-decoration: underline;
+}

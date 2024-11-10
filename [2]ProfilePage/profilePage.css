@@ -4,18 +4,42 @@
     margin-left: 20px;
     padding: 20px;
     height: 700px;
-    width: 1000px;
+    width: 1400px;
     background-color: aqua;
 }
 
+.searchContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(58, 226, 43);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.searchReturn {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 .profileContainer {
     position: relative;
     background-color: antiquewhite;
-    justify-content: center;
-    align-content: center;
     gap: 10px;
     border-radius: 10px;
-    padding: 20px;
+    padding: 30px;
+    left: 300px;
 }
 
 .profilePic img {
@@ -111,4 +135,15 @@ button:focus {
 .friend:focus {
     outline: none;
     border: 1px solid black;
+}
+
+.searchResult{
+    position: relative;
+
+    background-color: blueviolet;
+    max-height: 800px;
+    max-width: 600px;
+    overflow-y: auto;
+
+    
 }

@@ -3,7 +3,7 @@ const appDiv = document.getElementById('app');
 const model = {
     app: {
         pages: ['loginPage', 'feedPage', 'profilePage', 'friendPage','clubPage', 'chatRoom'],
-        currentPage: 'chatRoom',
+        currentPage: 'profilePage',
         isOpen: true,
 
         selectedUsers: {
@@ -42,6 +42,9 @@ const model = {
             inputFriend: '',
         },
 
+        clubPage: {
+
+        },
         tempMessages: {
             messagePrompt: '',
             chatTemp: '',
@@ -135,6 +138,7 @@ const model = {
 
             {
                 clubId: 0,
+                img: "IMG/Real_Madrid_CF.svg.webp",
                 teamName: 'Real Madrid CF',
                 leagueTitles: 35,
                 cupTitles: 29,
@@ -166,6 +170,7 @@ const model = {
             },
             {
                 clubId: 1,
+                img: "IMG/FC_Barcelona_(crest).svg.webp",
                 teamName: 'FC Barcelona',
                 leagueTitles: 27,
                 cupTitles: 31,
@@ -197,6 +202,7 @@ const model = {
             },
             {
                 clubId: 2,
+                img: "IMG/Manchester_United_FC_crest.svg.webp",
                 teamName: 'Manchester United FC',
                 leagueTitles: 20,
                 cupTitles: 12,
@@ -228,6 +234,7 @@ const model = {
             },
             {
                 clubId: 3,
+                img: "",
                 teamName: 'Bayern Munich',
                 leagueTitles: 33,
                 cupTitles: 20,
@@ -259,6 +266,7 @@ const model = {
             },
             {
                 clubId: 4,
+                img: "IMG/Juventus_FC_-_pictogram_black_(Italy,_2017).svg.webp",
                 teamName: 'Juventus FC',
                 leagueTitles: 36,
                 cupTitles: 14,
@@ -290,6 +298,7 @@ const model = {
             },
             {
                 clubId: 5,
+                img: "IMG/Liverpool_FC.svg.webp",
                 teamName: 'Liverpool FC',
                 leagueTitles: 19,
                 cupTitles: 8,
@@ -321,6 +330,7 @@ const model = {
             },
             {
                 clubId: 6,
+                img: "IMG/Paris_Saint-Germain_F.C..svg.png",
                 teamName: 'Paris Saint-Germain FC',
                 leagueTitles: 11,
                 cupTitles: 14,
@@ -352,6 +362,7 @@ const model = {
             },
             {
                 clubId: 7,
+                img: "IMG/Logo_of_AC_Milan.svg.png",
                 teamName: 'AC Milan',
                 leagueTitles: 19,
                 cupTitles: 5,
@@ -383,6 +394,7 @@ const model = {
             },
             {
                 clubId: 8,
+                img: "IMG/Chelsea_FC.svg.webp",
                 teamName: 'Chelsea FC',
                 leagueTitles: 6,
                 cupTitles: 8,
@@ -414,6 +426,7 @@ const model = {
             },
             {
                 clubId: 9,
+                img: "IMG/Manchester_City_FC_badge.svg.webp",
                 teamName: 'Manchester City FC',
                 leagueTitles: 9,
                 cupTitles: 6,
