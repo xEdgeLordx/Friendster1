@@ -27,6 +27,7 @@ function registerUser(){
     if(inputReg.username === foundUser){
         return;
     }
+
     //tilbake til orginal
     if(inputReg.username && inputReg.password && inputReg.passwordConfirm && inputReg.name && inputReg.age && inputReg.occupation){
         if(inputReg.password === inputReg.passwordConfirm){
@@ -49,12 +50,12 @@ function registerUser(){
             };
             model.data.users.push(newUser);
             console.log("new user:", newUser)
+
         }
     }else{
         console.log("fyll inn alle ruter")
     }
     return null;
-}
 
 function compareUser(){
 return model.data.users.find(user =>
