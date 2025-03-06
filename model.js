@@ -119,7 +119,7 @@ const model = {
                 id: 3,
                 isAdmin: false,
                 email: 'Anna@mail.no',
-                username: 'Anna1',
+                username: 'Anna',
                 password: '123',
                 userImages: ["Photos/Anna/Anna1.png","Photos/Anna/anna2.png","Photos/Anna/anna3.png",],
                 name: 'Anna',
