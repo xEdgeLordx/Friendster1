@@ -1,3 +1,21 @@
+.app{
+
+    justify-items: center;
+}
+
+button{
+    background-color: #fff;
+    border: none;
+    border-radius: 15%;
+    max-height: 60px;
+    max-width: 100px;
+    min-height: 25px;
+    min-width: 50px;
+    color: black;
+    border: solid rgb(155, 155, 155) 1px;
+}
+
+
 .outerContainer{
     align-items: center;
     justify-content: center;
@@ -5,18 +23,18 @@
     padding: 20px;
     height: 700px;
     width: 1400px;
-    background-color: aqua;
+    background-color: #7886C7;
 }
 
 .searchContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: rgb(58, 226, 43);
+    background-color: #7886C7;
     padding: 20px;
     border-radius: 8px;
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
 }
@@ -35,7 +53,7 @@
 }
 .profileContainer {
     position: relative;
-    background-color: antiquewhite;
+    background-color: #FFF2F2;
     gap: 10px;
     border-radius: 10px;
     padding: 30px;
