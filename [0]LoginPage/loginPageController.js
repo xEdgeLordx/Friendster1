@@ -27,6 +27,7 @@ function registerUser(){
     if(inputReg.username === foundUser){
         return;
     }
+    //tilbake til orginal
     if(inputReg.username && inputReg.password && inputReg.passwordConfirm && inputReg.name && inputReg.age && inputReg.occupation){
         if(inputReg.password === inputReg.passwordConfirm){
             let newUser = {
