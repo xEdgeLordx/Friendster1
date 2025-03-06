@@ -21,16 +21,16 @@ function findUser(loginUsername, loginPass){
 
 // -------------------Reg user controller-----------------------
 
-function registerUser(){
+function registerUser() {
     inputReg = model.input.registerUser;
     let foundUser = compareUser();
-    if(inputReg.username === foundUser){
+    if (inputReg.username === foundUser) {
         return;
     }
 
     //tilbake til orginal
-    if(inputReg.username && inputReg.password && inputReg.passwordConfirm && inputReg.name && inputReg.age && inputReg.occupation){
-        if(inputReg.password === inputReg.passwordConfirm){
+    if (inputReg.username && inputReg.password && inputReg.passwordConfirm && inputReg.name && inputReg.age && inputReg.occupation) {
+        if (inputReg.password === inputReg.passwordConfirm) {
             let newUser = {
                 id: model.data.users.length,
                 isAdmin: false,
@@ -52,10 +52,11 @@ function registerUser(){
             console.log("new user:", newUser)
 
         }
-    }else{
+    } else {
         console.log("fyll inn alle ruter")
     }
     return null;
+}
 
 function compareUser(){
 return model.data.users.find(user =>
