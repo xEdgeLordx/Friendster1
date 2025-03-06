@@ -27,33 +27,46 @@ function registerUser(){
     if(inputReg.username === foundUser){
         return;
     }
-    if(inputReg.username && inputReg.password && inputReg.passwordConfirm && inputReg.name && inputReg.age && inputReg.occupation){
-        if(inputReg.password === inputReg.passwordConfirm){
-            let newUser = {
-                id: model.data.users.length,
-                isAdmin: false,
-                email: inputReg.email,
-                username: inputReg.username,
-                password: inputReg.password,
-                passwordConfirm: inputReg.passwordConfirm,
-                userImages: [],
-                name: inputReg.name,
-                age: inputReg.age,
-                gender: inputReg.gender,
-                bio: '',
-                occupation: inputReg.occupation,
-                interests: [],
-                favoriteTeam: [],
-                friendList: []
-            };
-            model.data.users.push(newUser);
-            console.log("new user:", newUser)
+    if(inputReg.username){
+        if(inputReg.password){
+            if(inputReg.passwordConfirm){
+                if(inputReg.name){
+                    if(inputReg.age){
+                        if(inputReg.occupation){
+                            if(inputReg.password === inputReg.passwordConfirm){
+                                let newUser = {
+                                    id: model.data.users.length,
+                                    isAdmin: false,
+                                    email: inputReg.email,
+                                    username: inputReg.username,
+                                    password: inputReg.password,
+                                    passwordConfirm: inputReg.passwordConfirm,
+                                    userImages: [],
+                                    name: inputReg.name,
+                                    age: inputReg.age,
+                                    gender: inputReg.gender,
+                                    bio: '',
+                                    occupation: inputReg.occupation,
+                                    interests: [],
+                                    favoriteTeam: [],
+                                    friendList: []
+                                };
+                                model.data.users.push(newUser);
+                                console.log("new user:", newUser)
+                        }
+                    }
+                }
+            }
+
+        }
+    }{
+
+
         }
     }else{
         console.log("fyll inn alle ruter")
     }
     return null;
-}
 
 function compareUser(){
 return model.data.users.find(user =>
